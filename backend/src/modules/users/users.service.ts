@@ -33,12 +33,19 @@ export class UsersService {
         return user;
     }
 
+    async findByCorreo(correo: string): Promise<Users | null> {
+        return this.usersRepository.findOne({
+            where: { correo },
+            select: ['id', 'correo', 'password', 'rol', 'activo'],
+        });
+    }
+
     async update(id: number, updateUsersDto: UpdateUsersDto): Promise<Users> {
         const user = await this.findOne(id);
 
         if (updateUsersDto.password) {
             updateUsersDto.password = await bcrypt.hash(updateUsersDto.password, 10);
-          }
+        }
 
         Object.assign(user, updateUsersDto);
         return this.usersRepository.save(user);

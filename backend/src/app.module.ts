@@ -4,17 +4,20 @@ import { AppService } from './app.service';
 import { UsersModule } from './modules/users/users.module';
 import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from './Auth/auth.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
-    TypeOrmModule.forRoot({ 
-      type: 'postgres', 
-      url: process.env.SUPABASE_URL, 
-      autoLoadEntities: true, 
-      synchronize: true, 
+    ConfigModule.forRoot({}),
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      url: process.env.SUPABASE_URL,
+      autoLoadEntities: true,
+      synchronize: true,
     }),
-    UsersModule],
+    UsersModule,
+    AuthModule
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
