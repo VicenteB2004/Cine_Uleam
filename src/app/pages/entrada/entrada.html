@@ -1,0 +1,112 @@
+<div class="entrada-page">
+  <div class="entrada-container">
+    <div class="movie-header">
+      <div class="movie-poster">
+        <img src="demons.jpg" alt="Demon Slayer">
+      </div>
+      <div class="movie-details">
+        <h1>Demon Slayer: Infinity Train</h1>
+        <p class="movie-info">Animación • Aventura • Acción</p>
+        <p class="movie-director">By: Koyoharu Gotouge</p>
+        <div class="movie-rating-header">⭐ 9.2</div>
+      </div>
+    </div>
+
+    <div class="purchase-section">
+      <h2 class="section-title">Selecciona tu función</h2>
+      
+      <div class="schedule-grid">
+        <div class="schedule-card">
+          <div class="schedule-time">14:00</div>
+          <div class="schedule-date">Hoy</div>
+          <div class="schedule-available">Disponible</div>
+        </div>
+        <div class="schedule-card">
+          <div class="schedule-time">17:00</div>
+          <div class="schedule-date">Hoy</div>
+          <div class="schedule-available">Disponible</div>
+        </div>
+        <div class="schedule-card">
+          <div class="schedule-time">20:00</div>
+          <div class="schedule-date">Hoy</div>
+          <div class="schedule-available">Disponible</div>
+        </div>
+        <div class="schedule-card">
+          <div class="schedule-time">14:00</div>
+          <div class="schedule-date">Mañana</div>
+          <div class="schedule-available">Disponible</div>
+        </div>
+        <div class="schedule-card">
+          <div class="schedule-time">17:00</div>
+          <div class="schedule-date">Mañana</div>
+          <div class="schedule-available">Disponible</div>
+        </div>
+        <div class="schedule-card">
+          <div class="schedule-time">20:00</div>
+          <div class="schedule-date">Mañana</div>
+          <div class="schedule-available">Disponible</div>
+        </div>
+      </div>
+
+      <div class="tickets-section">
+        <h3 class="subsection-title">Cantidad de entradas</h3>
+        <div class="tickets-selector">
+          <div class="ticket-type">
+            <label>Adulto</label>
+            <div class="quantity-control">
+              <button class="qty-btn" type="button">-</button>
+              <span class="qty-value">0</span>
+              <button class="qty-btn" type="button">+</button>
+            </div>
+            <span class="ticket-price">$8.00</span>
+          </div>
+          <div class="ticket-type">
+            <label>Niño</label>
+            <div class="quantity-control">
+              <button class="qty-btn" type="button">-</button>
+              <span class="qty-value">0</span>
+              <button class="qty-btn" type="button">+</button>
+            </div>
+            <span class="ticket-price">$5.00</span>
+          </div>
+          <div class="ticket-type">
+            <label>Estudiante</label>
+            <div class="quantity-control">
+              <button class="qty-btn" type="button">-</button>
+              <span class="qty-value">0</span>
+              <button class="qty-btn" type="button">+</button>
+            </div>
+            <span class="ticket-price">$6.00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-section">
+        <h3 class="subsection-title">Resumen</h3>
+        <div class="summary-card">
+          <div class="summary-row">
+            <span>Película:</span>
+            <span>Demon Slayer: Infinity Train</span>
+          </div>
+          <div class="summary-row">
+            <span>Fecha y hora:</span>
+            <span>Selecciona una función</span>
+          </div>
+          <div class="summary-row">
+            <span>Cantidad:</span>
+            <span>0 entradas</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total:</span>
+            <span>$0.00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a [routerLink]="['/dashboard']" class="btn btn-secondary">Cancelar</a>
+        <button class="btn btn-primary" type="button">Proceder al pago</button>
+      </div>
+    </div>
+  </div>
+</div>

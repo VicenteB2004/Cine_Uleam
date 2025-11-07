@@ -1,1 +1,27 @@
-<p>log-in works!</p>
+<div class="page">
+    <div class="card">
+        <h1>Iniciar sesión</h1>
+        <form class="login-form">
+            <label>
+                Correo
+                <input #email type="email" placeholder="usuario@correo.com" required>
+            </label>
+            <label>
+                Contraseña
+                <input #password type="password" placeholder="********" required>
+            </label>
+            <div class="actions">
+                <button
+                    type="button"
+                    class="btn primary"
+                    [routerLink]="['/dashboard']"
+                    [disabled]="!email.value || !password.value || !email.value.includes('@')"
+                >Ingresar</button>
+                <a class="btn ghost" [routerLink]="['/auth/register']">Crear cuenta</a>
+            </div>
+        </form>
+    </div>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+</div>

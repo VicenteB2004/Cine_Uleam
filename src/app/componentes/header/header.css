@@ -1,0 +1,109 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: black;
+}
+
+.nav_container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    --icon-toggle-menu: url("/image/menu.svg");
+    --transform-menu-show: translate(-100%);
+}
+
+.nav_container:has(.nav_input:checked) {
+    --icon-toggle-menu: url("/image/close.svg");
+    --transform-menu-show: translate(0);
+}
+
+.nav_toggle {
+    width: 40px;
+    height: 40px;
+    background-image: var(--icon-toggle-menu);
+    filter: invert(1);
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    transition: background-image .5s;
+}
+
+.nav_input {
+    display: none;
+}
+
+.nav_figure,
+.nav_toggle {
+    z-index: 1000;
+}
+
+.nav_list {
+    
+    transform: var(--transform-menu-show);
+    position: fixed;
+    background-color: black;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    gap: 2rem;
+    text-align: center;
+    padding: 1.5rem 5%;
+    list-style: none;
+    transition: .2s transform;
+}
+
+.nav_link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav_link:hover {
+    color: #8acfff;
+}
+
+.nav_link.active {
+    color: #8acfff;
+}
+
+.nav_link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #8acfff, transparent);
+    border-radius: 2px;
+}
+
+img {
+    height: 45px;
+}
+
+@media (width > 764px) {
+    .nav_container {
+        --transform-menu-show: translate(0);
+    }
+
+    .nav_toggle {
+        display: none;
+    }
+
+    .nav_list {
+        position: static;
+        grid-auto-flow: column;
+        place-content: unset;
+        padding: 0;
+        transition: unset;
+    }
+}

@@ -1,0 +1,21 @@
+.footer {
+    text-align: center;
+    background-color: #000;
+    color: white;
+    padding: 25px 0;
+    font-size: 0.9rem;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #8acfff, transparent);
+    opacity: 0.5;
+}

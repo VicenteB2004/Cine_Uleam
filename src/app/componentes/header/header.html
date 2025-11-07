@@ -1,0 +1,18 @@
+<nav class="nav">
+    <div class="nav_container">
+      <figure class="nav_figure">
+        <img src="/image/logo.png" alt="logo">
+      </figure>
+
+      <label class="nav_toggle">
+        <input type="checkbox" id="menu_input" class="nav_input">
+      </label>
+
+      <ul class="nav_list">
+        <li class="nav_item"><a [routerLink]="['/dashboard']" routerLinkActive="active" class="nav_link">HOME</a></li>
+        <li class="nav_item"><a [routerLink]="['/cartelera']" routerLinkActive="active" class="nav_link">CARTELERA</a></li>
+        <li class="nav_item"><a href="#" class="nav_link">CONTACTO</a></li>
+        <li class="nav_item"><a href="#" class="nav_link">NOSOTROS</a></li>
+      </ul>
+    </div>
+  </nav>

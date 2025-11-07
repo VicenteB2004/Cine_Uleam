@@ -12,27 +12,6 @@
 </head>
 
 <body>
-  <!-- 🟢 MENÚ DESLIZANTE (SIN CAMBIOS) -->
-  <nav class="nav">
-    <div class="nav_container">
-      <figure class="nav_figure">
-        <img src="/image/logo.png" alt="logo">
-      </figure>
-
-      <label class="nav_toggle">
-        <input type="checkbox" id="menu_input" class="nav_input">
-      </label>
-
-      <ul class="nav_list">
-        <li class="nav_item"><a href="#" class="nav_link active">HOME</a></li>
-        <li class="nav_item"><a href="#" class="nav_link">CARTELERA</a></li>
-        <li class="nav_item"><a href="#" class="nav_link">CONTACTO</a></li>
-        <li class="nav_item"><a href="#" class="nav_link">NOSOTROS</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- 🟣 CARRUSEL CINEMATOGRÁFICO -->
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="7000">
     <div class="carousel-inner">
 
@@ -50,7 +29,7 @@
             Un cierre épico que marca el fin de una era.
           </p>
           <p class="movie-director">By: Hajime Isayama</p>
-          <a routerLink="cartelera" class="btn btn-outline-light mt-3">VER CARTELERA →</a>
+          <a [routerLink]="['/cartelera']" class="btn btn-outline-light mt-3">VER CARTELERA →</a>
 
         </div>
       </div>
@@ -68,7 +47,7 @@
             Tanjiro continúa su viaje enfrentando demonios cada vez más poderosos en su búsqueda por la redención.
           </p>
           <p class="movie-director">By: Koyoharu Gotouge</p>
-          <button class="btn btn-outline-light mt-3">COMPRAR ENTRADAS →</button>
+          <a [routerLink]="['/entrada']" class="btn btn-outline-light mt-3">COMPRAR ENTRADAS →</a>
         </div>
       </div>
 
@@ -100,43 +79,192 @@
   </div>
 
   <!-- 🟢 SECCIÓN DE ESTRENOS -->
-  <section class="movies container py-5">
-    <h2 class="text-center mb-4 text-light">🎬 Próximos Estrenos</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
+  <section class="movies-section">
+    <div class="movies-container">
+      <h2 class="section-title">🎬 Próximos Estrenos</h2>
+      <div class="movies-grid">
         <div class="movie-card">
-          <img src="demons.jpg" alt="Movie 1">
-          <div class="info">
-            <h5>Demon Slayer</h5>
-            <p>Fecha de estreno: Nov 2025</p>
+          <div class="movie-image-wrapper">
+            <img src="demons.jpg" alt="Demon Slayer">
+            <div class="movie-overlay">
+              <span class="movie-badge">Nuevo</span>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h5>Demon Slayer: Infinity Train</h5>
+            <p class="movie-genre">Animación • Aventura • Acción</p>
+            <p class="movie-date">Estreno: Nov 2025</p>
+            <div class="movie-rating">⭐ 9.2</div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
+
         <div class="movie-card">
-          <img src="aot3.webp" alt="Movie 2">
-          <div class="info">
-            <h5>Attack on Titan</h5>
-            <p>Final épico - Disponible ya</p>
+          <div class="movie-image-wrapper">
+            <img src="aot3.webp" alt="Attack on Titan">
+            <div class="movie-overlay">
+              <span class="movie-badge available">Disponible</span>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h5>Attack on Titan: Final Season</h5>
+            <p class="movie-genre">Acción • Drama • Fantasía</p>
+            <p class="movie-date">Disponible ahora</p>
+            <div class="movie-rating">⭐ 9.8</div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
+
         <div class="movie-card">
-          <img src="minecraft.jpg" alt="Movie 3">
-          <div class="info">
-            <h5>Minecraft</h5>
-            <p>Aventura para toda la familia</p>
+          <div class="movie-image-wrapper">
+            <img src="minecraft.jpg" alt="Minecraft">
+            <div class="movie-overlay">
+              <span class="movie-badge coming">Próximamente</span>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h5>Minecraft: The Movie</h5>
+            <p class="movie-genre">Aventura • Familiar • Fantasía</p>
+            <p class="movie-date">Estreno: Dic 2025</p>
+            <div class="movie-rating">⭐ 8.5</div>
+          </div>
+        </div>
+
+        <div class="movie-card">
+          <div class="movie-image-wrapper">
+            <img src="aot3.webp" alt="Movie 4">
+            <div class="movie-overlay">
+              <span class="movie-badge">Nuevo</span>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h5>Spider-Man: Across the Spiderverse</h5>
+            <p class="movie-genre">Animación • Superhéroes • Aventura</p>
+            <p class="movie-date">Estreno: Ene 2026</p>
+            <div class="movie-rating">⭐ 9.5</div>
+          </div>
+        </div>
+
+        <div class="movie-card">
+          <div class="movie-image-wrapper">
+            <img src="demons.jpg" alt="Movie 5">
+            <div class="movie-overlay">
+              <span class="movie-badge available">Disponible</span>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h5>One Piece: Red</h5>
+            <p class="movie-genre">Animación • Aventura • Comedia</p>
+            <p class="movie-date">Disponible ahora</p>
+            <div class="movie-rating">⭐ 9.0</div>
+          </div>
+        </div>
+
+        <div class="movie-card">
+          <div class="movie-image-wrapper">
+            <img src="minecraft.jpg" alt="Movie 6">
+            <div class="movie-overlay">
+              <span class="movie-badge coming">Próximamente</span>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h5>Dune: Part Two</h5>
+            <p class="movie-genre">Ciencia Ficción • Drama • Épico</p>
+            <p class="movie-date">Estreno: Feb 2026</p>
+            <div class="movie-rating">⭐ 9.3</div>
+          </div>
+        </div>
+
+        <div class="movie-card">
+          <div class="movie-image-wrapper">
+            <img src="aot3.webp" alt="Movie 7">
+            <div class="movie-overlay">
+              <span class="movie-badge">Nuevo</span>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h5>Interstellar: Re-release</h5>
+            <p class="movie-genre">Ciencia Ficción • Drama • Aventura</p>
+            <p class="movie-date">Estreno: Mar 2026</p>
+            <div class="movie-rating">⭐ 9.7</div>
+          </div>
+        </div>
+
+        <div class="movie-card">
+          <div class="movie-image-wrapper">
+            <img src="demons.jpg" alt="Movie 8">
+            <div class="movie-overlay">
+              <span class="movie-badge available">Disponible</span>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h5>Jujutsu Kaisen 0</h5>
+            <p class="movie-genre">Animación • Acción • Sobrenatural</p>
+            <p class="movie-date">Disponible ahora</p>
+            <div class="movie-rating">⭐ 9.1</div>
+          </div>
+        </div>
+
+        <div class="movie-card">
+          <div class="movie-image-wrapper">
+            <img src="minecraft.jpg" alt="Movie 9">
+            <div class="movie-overlay">
+              <span class="movie-badge coming">Próximamente</span>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h5>The Matrix: Resurrections</h5>
+            <p class="movie-genre">Ciencia Ficción • Acción • Thriller</p>
+            <p class="movie-date">Estreno: Abr 2026</p>
+            <div class="movie-rating">⭐ 8.8</div>
+          </div>
+        </div>
+
+        <div class="movie-card">
+          <div class="movie-image-wrapper">
+            <img src="aot3.webp" alt="Movie 10">
+            <div class="movie-overlay">
+              <span class="movie-badge">Nuevo</span>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h5>Blade Runner 2049</h5>
+            <p class="movie-genre">Ciencia Ficción • Neo-noir • Drama</p>
+            <p class="movie-date">Estreno: May 2026</p>
+            <div class="movie-rating">⭐ 9.4</div>
+          </div>
+        </div>
+
+        <div class="movie-card">
+          <div class="movie-image-wrapper">
+            <img src="demons.jpg" alt="Movie 11">
+            <div class="movie-overlay">
+              <span class="movie-badge available">Disponible</span>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h5>Your Name</h5>
+            <p class="movie-genre">Animación • Romance • Drama</p>
+            <p class="movie-date">Disponible ahora</p>
+            <div class="movie-rating">⭐ 9.6</div>
+          </div>
+        </div>
+
+        <div class="movie-card">
+          <div class="movie-image-wrapper">
+            <img src="minecraft.jpg" alt="Movie 12">
+            <div class="movie-overlay">
+              <span class="movie-badge coming">Próximamente</span>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h5>Inception: Re-release</h5>
+            <p class="movie-genre">Ciencia Ficción • Thriller • Acción</p>
+            <p class="movie-date">Estreno: Jun 2026</p>
+            <div class="movie-rating">⭐ 9.9</div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <footer class="footer">
-    <p>© 2025 Cine Uleam - Todos los derechos reservados</p>
-  </footer>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

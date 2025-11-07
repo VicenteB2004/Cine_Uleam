@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-cartelera',
+  selector: 'app-entrada',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './cartelera.html',
-  styleUrl: './cartelera.css',
+  templateUrl: './entrada.html',
+  styleUrl: './entrada.css',
 })
-export class Cartelera {
+export class Entrada {
 
 }

@@ -1,0 +1,341 @@
+.entrada-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0b0b0b 0%, #121212 50%, #0b0b0b 100%);
+  padding: 40px 20px;
+  color: #fff;
+}
+
+.entrada-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.movie-header {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 50px;
+  padding: 30px;
+  background: linear-gradient(145deg, #1a1a1a 0%, #0f0f0f 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.movie-poster {
+  flex-shrink: 0;
+  width: 300px;
+  height: 450px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.movie-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.movie-details h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(138, 207, 255, 0.3);
+}
+
+.movie-info {
+  color: #aaa;
+  font-size: 1.1rem;
+  margin: 0 0 10px 0;
+}
+
+.movie-director {
+  color: #8acfff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+}
+
+.movie-rating-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #fbbf24;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.purchase-section {
+  background: linear-gradient(145deg, #1a1a1a 0%, #0f0f0f 100%);
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 30px 0;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #8acfff, transparent);
+  border-radius: 2px;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.schedule-card {
+  background: linear-gradient(145deg, #0f0f0f 0%, #1a1a1a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.schedule-card:hover {
+  transform: translateY(-5px);
+  border-color: #8acfff;
+  box-shadow: 0 10px 30px rgba(138, 207, 255, 0.2);
+  background: linear-gradient(145deg, #1a1a1a 0%, #0f0f0f 100%);
+}
+
+.schedule-time {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #8acfff;
+  margin-bottom: 8px;
+}
+
+.schedule-date {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.schedule-available {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  color: #0b0b0b;
+}
+
+.subsection-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  color: #fff;
+}
+
+.tickets-section {
+  margin-bottom: 40px;
+}
+
+.tickets-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ticket-type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: linear-gradient(145deg, #0f0f0f 0%, #1a1a1a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+}
+
+.ticket-type label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  flex: 1;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.qty-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+  color: #fff;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.qty-btn:hover {
+  background: linear-gradient(145deg, #8acfff, #6094ff);
+  color: #0b0b0b;
+  border-color: #8acfff;
+  transform: scale(1.1);
+}
+
+.qty-value {
+  min-width: 30px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.ticket-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #8acfff;
+  min-width: 80px;
+  text-align: right;
+}
+
+.summary-section {
+  margin-bottom: 40px;
+}
+
+.summary-card {
+  background: linear-gradient(145deg, #0f0f0f 0%, #1a1a1a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #aaa;
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-row.total {
+  margin-top: 15px;
+  padding-top: 20px;
+  border-top: 2px solid rgba(138, 207, 255, 0.3);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #8acfff;
+}
+
+.actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  text-align: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #8acfff, #6094ff);
+  color: #0b0b0b;
+  box-shadow: 0 10px 30px rgba(138, 207, 255, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(138, 207, 255, 0.4);
+  filter: brightness(1.1);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .movie-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .movie-poster {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .movie-details h1 {
+    font-size: 2rem;
+  }
+
+  .schedule-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .ticket-type {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .ticket-price {
+    text-align: center;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+

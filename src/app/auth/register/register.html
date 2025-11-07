@@ -1,0 +1,111 @@
+<div class="page">
+  <div class="card">
+    <h1>Crear cuenta</h1>
+    
+    <form [formGroup]="form" (ngSubmit)="submitUser()" class="register-form">
+      <!-- Mensajes de éxito/error -->
+      <div *ngIf="successMessage" class="message success">
+        {{ successMessage }}
+      </div>
+      <div *ngIf="errorMessage" class="message error">
+        {{ errorMessage }}
+      </div>
+
+      <label>
+        Nombres
+        <input 
+          type="text" 
+          formControlName="nombres"
+          placeholder="Ingresa tus nombres" 
+          [class.invalid]="nombres?.invalid && nombres?.touched">
+        <span *ngIf="nombres?.invalid && nombres?.touched" class="error-text">
+          <span *ngIf="nombres?.errors?.['required']">Los nombres son requeridos</span>
+          <span *ngIf="nombres?.errors?.['minlength']">Mínimo 2 caracteres</span>
+        </span>
+      </label>
+
+      <label>
+        Apellidos
+        <input 
+          type="text" 
+          formControlName="apellidos"
+          placeholder="Ingresa tus apellidos" 
+          [class.invalid]="apellidos?.invalid && apellidos?.touched">
+        <span *ngIf="apellidos?.invalid && apellidos?.touched" class="error-text">
+          <span *ngIf="apellidos?.errors?.['required']">Los apellidos son requeridos</span>
+          <span *ngIf="apellidos?.errors?.['minlength']">Mínimo 2 caracteres</span>
+        </span>
+      </label>
+
+      <label>
+        Correo electrónico
+        <input 
+          type="email" 
+          formControlName="correo"
+          placeholder="usuario@correo.com" 
+          [class.invalid]="correo?.invalid && correo?.touched">
+        <span *ngIf="correo?.invalid && correo?.touched" class="error-text">
+          <span *ngIf="correo?.errors?.['required']">El correo es requerido</span>
+          <span *ngIf="correo?.errors?.['email']">Ingresa un correo válido</span>
+        </span>
+      </label>
+
+      <label>
+        Cédula
+        <input 
+          type="text" 
+          formControlName="cedula"
+          placeholder="Ingresa tu cédula (10 dígitos)" 
+          maxlength="10"
+          [class.invalid]="cedula?.invalid && cedula?.touched">
+        <span *ngIf="cedula?.invalid && cedula?.touched" class="error-text">
+          <span *ngIf="cedula?.errors?.['required']">La cédula es requerida</span>
+          <span *ngIf="cedula?.errors?.['pattern']">Debe tener 10 dígitos numéricos</span>
+        </span>
+      </label>
+
+      <label>
+        Contraseña
+        <input 
+          type="password" 
+          formControlName="password"
+          placeholder="Mínimo 6 caracteres" 
+          [class.invalid]="password?.invalid && password?.touched">
+        <span *ngIf="password?.invalid && password?.touched" class="error-text">
+          <span *ngIf="password?.errors?.['required']">La contraseña es requerida</span>
+          <span *ngIf="password?.errors?.['minlength']">Mínimo 6 caracteres</span>
+        </span>
+      </label>
+
+      <label>
+        Confirmar contraseña
+        <input 
+          type="password" 
+          formControlName="confirmPassword"
+          placeholder="Repite tu contraseña" 
+          [class.invalid]="(confirmPassword?.invalid || form.errors?.['passwordMismatch']) && confirmPassword?.touched">
+        <span *ngIf="(confirmPassword?.invalid || form.errors?.['passwordMismatch']) && confirmPassword?.touched" class="error-text">
+          <span *ngIf="confirmPassword?.errors?.['required']">Confirma tu contraseña</span>
+          <span *ngIf="form.errors?.['passwordMismatch'] && !confirmPassword?.errors?.['required']">Las contraseñas no coinciden</span>
+        </span>
+      </label>
+
+      <div class="actions">
+        <button
+          type="submit"
+          class="btn primary"
+          [disabled]="form.invalid || isLoading"
+        >
+          <span *ngIf="!isLoading">Registrarme</span>
+          <span *ngIf="isLoading">Registrando...</span>
+        </button>
+
+        <a class="btn ghost" [routerLink]="['/auth/login']">Ya tengo cuenta</a>
+      </div>
+    </form>
+  </div>
+
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+</div>
