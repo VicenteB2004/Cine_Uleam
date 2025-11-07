@@ -10,6 +10,7 @@ import { SalasModule } from './modules/sala/sala.module';
 import { AsientosModule } from './modules/asientos/asientos.module';
 import { AsientosReservadosModule } from './modules/asientos-reservados/asientos-reservados.module';
 import { FuncionesModule } from './modules/funciones/funciones.module';
+import { NotificacionesModule } from './modules/notificaciones/notificaciones.module';
 
 @Module({
   imports: [
@@ -18,7 +19,8 @@ import { FuncionesModule } from './modules/funciones/funciones.module';
       type: 'postgres',
       url: process.env.SUPABASE_URL,
       autoLoadEntities: true,
-      synchronize: true,
+      synchronize: false,
+      logging: true,
     }),
     UsersModule,
     PeliculasModule,
@@ -27,6 +29,7 @@ import { FuncionesModule } from './modules/funciones/funciones.module';
     AsientosModule,
     AsientosReservadosModule,
     FuncionesModule,
+    NotificacionesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

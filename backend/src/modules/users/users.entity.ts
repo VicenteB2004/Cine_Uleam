@@ -4,7 +4,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 export class Users { 
     
-    @PrimaryGeneratedColumn() 
+    @PrimaryGeneratedColumn('uuid') 
     id: string; 
     
     @Column({ unique: true }) 
@@ -22,7 +22,7 @@ export class Users {
     @Column() 
     rol: string; 
     
-    @Column() 
+    @Column({ name: 'esta_activo', default: true })
     activo: boolean; 
     
     @Column({ select: false }) // ocultamos el password en consultas normales
