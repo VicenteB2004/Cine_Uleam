@@ -5,7 +5,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 export class Users { 
     
     @PrimaryGeneratedColumn() 
-    id: number; 
+    id: string; 
     
     @Column({ unique: true }) 
     correo: string; 

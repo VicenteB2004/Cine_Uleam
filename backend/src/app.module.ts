@@ -8,6 +8,7 @@ import { PeliculasModule } from './modules/peliculas/peliculas.module';
 import { ReservasModule } from './modules/reservas/reservas.module';
 import { SalasModule } from './modules/sala/sala.module';
 import { AsientosModule } from './modules/asientos/asientos.module';
+import { AsientosReservadosModule } from './modules/asientos-reservados/asientos-reservados.module';
 
 @Module({
   imports: [
@@ -22,7 +23,9 @@ import { AsientosModule } from './modules/asientos/asientos.module';
     PeliculasModule,
     ReservasModule,
     SalasModule,
-    AsientosModule],
+    AsientosModule,
+    AsientosReservadosModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
