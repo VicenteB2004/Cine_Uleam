@@ -12,12 +12,12 @@ import { AsientosReservadosModule } from './modules/asientos-reservados/asientos
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
-    TypeOrmModule.forRoot({ 
-      type: 'postgres', 
-      url: process.env.SUPABASE_URL, 
-      autoLoadEntities: true, 
-      synchronize: true, 
+    ConfigModule.forRoot({}),
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      url: process.env.SUPABASE_URL,
+      autoLoadEntities: true,
+      synchronize: true,
     }),
     UsersModule,
     PeliculasModule,
