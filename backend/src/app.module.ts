@@ -11,6 +11,7 @@ import { ReservasModule } from './modules/reservas/reservas.module';
 import { SalasModule } from './modules/sala/sala.module';
 import { AsientosModule } from './modules/asientos/asientos.module';
 import { AsientosReservadosModule } from './modules/asientos-reservados/asientos-reservados.module';
+import { AlquilerModule } from './modules/alquiler/alquiler.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { AsientosReservadosModule } from './modules/asientos-reservados/asientos
     SalasModule,
     AsientosModule,
     AsientosReservadosModule,
+    AlquilerModule,
   ],
   controllers: [AppController],
   providers: [AppService],
