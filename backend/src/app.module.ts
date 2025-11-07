@@ -6,6 +6,8 @@ import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PeliculasModule } from './modules/peliculas/peliculas.module';
 import { ReservasModule } from './modules/reservas/reservas.module';
+import { SalasModule } from './modules/sala/sala.module';
+import { AsientosModule } from './modules/asientos/asientos.module';
 
 @Module({
   imports: [
@@ -18,7 +20,9 @@ import { ReservasModule } from './modules/reservas/reservas.module';
     }),
     UsersModule,
     PeliculasModule,
-    ReservasModule],
+    ReservasModule,
+    SalasModule,
+    AsientosModule],
   controllers: [AppController],
   providers: [AppService],
 })
