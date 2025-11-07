@@ -25,7 +25,7 @@ export class Users {
     @Column() 
     activo: boolean; 
     
-    @Column()
+    @Column({ select: false }) // ocultamos el password en consultas normales
     password: string; 
     
     @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' }) 
