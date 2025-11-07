@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { UsersModule } from './modules/users/users.module';
 import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from './Auth/auth.module';
+import { QrcodeModule } from './modules/qrcode/qrcode.module';
 import { PeliculasModule } from './modules/peliculas/peliculas.module';
 import { ReservasModule } from './modules/reservas/reservas.module';
 import { SalasModule } from './modules/sala/sala.module';
@@ -23,6 +25,8 @@ import { NotificacionesModule } from './modules/notificaciones/notificaciones.mo
       logging: true,
     }),
     UsersModule,
+    AuthModule,
+    QrcodeModule,
     PeliculasModule,
     ReservasModule,
     SalasModule,
