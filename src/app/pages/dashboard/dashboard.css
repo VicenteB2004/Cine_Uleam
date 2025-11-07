@@ -1,0 +1,231 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Georgia, serif;
+    background-color: #0b0b0b;
+    color: white;
+}
+
+/* ======= MENÚ (SIN CAMBIOS) ======= */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: black;
+}
+
+.nav_container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    --icon-toggle-menu: url("/image/menu.svg");
+    --transform-menu-show: translate(-100%);
+}
+
+.nav_container:has(.nav_input:checked) {
+    --icon-toggle-menu: url("/image/close.svg");
+    --transform-menu-show: translate(0);
+}
+
+.nav_toggle {
+    width: 40px;
+    height: 40px;
+    background-image: var(--icon-toggle-menu);
+    filter: invert(1);
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    transition: background-image .5s;
+}
+
+.nav_input {
+    display: none;
+}
+
+.nav_figure,
+.nav_toggle {
+    z-index: 1000;
+}
+
+.nav_list {
+    
+    transform: var(--transform-menu-show);
+    position: fixed;
+    background-color: black;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    gap: 2rem;
+    text-align: center;
+    padding: 1.5rem 5%;
+    list-style: none;
+    transition: .2s transform;
+}
+
+.nav_link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+img {
+    height: 45px;
+}
+
+@media (width > 764px) {
+    .nav_container {
+        --transform-menu-show: translate(0);
+    }
+
+    .nav_toggle {
+        display: none;
+    }
+
+    .nav_list {
+        position: static;
+        grid-auto-flow: column;
+        place-content: unset;
+        padding: 0;
+        transition: unset;
+    }
+}
+
+/* ======= CARRUSEL CINEMATOGRÁFICO ======= */
+.carousel-item {
+    height: 100vh;
+    position: relative;
+    color: white;
+    overflow: hidden;
+}
+
+.carousel-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(60%);
+    transition: all 1s ease-in-out;
+}
+
+.carousel-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 35%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 1;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 25%;
+    left: 5%;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.movie-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.movie-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ccc;
+    margin-top: 1rem;
+}
+
+.movie-director {
+    color: #8acfff;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.tags span {
+    border: 1px solid #fff;
+    border-radius: 20px;
+    padding: 0.3rem 0.8rem;
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-outline-light {
+    border: 1px solid white;
+    color: white;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-outline-light:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Control de botones */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+}
+
+/* Animación suave */
+.carousel-item.active .carousel-bg {
+    transform: scale(1.05);
+    transition: transform 8s ease-in-out;
+}
+
+/* ======= TARJETAS DE PELÍCULAS ======= */
+.movies {
+    background-color: #121212;
+    border-top: 2px solid #333;
+}
+
+.movie-card {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.movie-card .info {
+    padding: 1rem;
+    background-color: #1a1a1a;
+}
+
+.movie-card h5 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.movie-card p {
+    color: #bbb;
+    font-size: 0.9rem;
+}
+
+/* ======= FOOTER ======= */
+.footer {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
