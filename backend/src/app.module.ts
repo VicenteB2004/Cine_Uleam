@@ -5,6 +5,7 @@ import { UsersModule } from './modules/users/users.module';
 import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './Auth/auth.module';
+import { QrcodeModule } from './modules/qrcode/qrcode.module';
 
 @Module({
   imports: [
@@ -16,7 +17,8 @@ import { AuthModule } from './Auth/auth.module';
       synchronize: true,
     }),
     UsersModule,
-    AuthModule
+    AuthModule,
+    QrcodeModule
   ],
   controllers: [AppController],
   providers: [AppService],
